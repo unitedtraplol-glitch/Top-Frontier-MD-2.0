@@ -1,9 +1,9 @@
-FROM quay.io/mrxdking/star-xd:latest
+FROM quay.io/unitedtraplol-glitch/Top-Frontier-MD-2.0:latest
 
-RUN git clone https://github.com/XdKing2/star-xd /root/star-xd && \
-    rm -rf /root/star-xd/.git
+RUN git clone https://github.com/unitedtraplol-glitch/Top-Frontier-MD-2.0 /root/Top-Frontier-MD-2.0 && \
+    rm -rf /root/Top-Frontier-MD-2.0/.git
 
-WORKDIR /root/star-xd
+WORKDIR /root/Top-Frontier-MD-2.0
 
 RUN npm install
 
