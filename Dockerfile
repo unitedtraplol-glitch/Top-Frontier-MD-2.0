@@ -1,6 +1,6 @@
 FROM quay.io/mrxdking/star-xd:latest
 
-RUN git clone https://github.com/XdKing2/star-xd /root/mega-md && \
+RUN git clone https://github.com/XdKing2/star-xd /root/star-xd && \
     rm -rf /root/star-xd/.git
 
 WORKDIR /root/star-xd
