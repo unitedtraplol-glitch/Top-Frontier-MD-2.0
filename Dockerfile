@@ -1,11 +1,20 @@
-FROM quay.io/mrxdking/star-xd:latest
+FROM node:20-slim
 
-RUN git clone https://github.com/unitedtraplol-glitch/Top-Frontier-MD-2.0 /root/star-xd && \
-    rm -rf /root/star-xd/.git
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        ffmpeg \
+        ca-certificates \
+        curl && \
+    rm -rf /var/lib/apt/lists/*
 
-WORKDIR /root/star-xd
+WORKDIR /app
 
-RUN npm install
+COPY package*.json ./
+
+RUN npm install --omit=dev
+
+COPY . .
 
 EXPOSE 5000
+
 CMD ["npm", "start"]
